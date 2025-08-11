@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+  <!-- Favicon ARiOS Studio - Symbole simplifié -->
+  <rect width="60" height="60" rx="12" fill="#FDF5EE"/>
+  
+  <!-- Symbole iconique -->
+  <g transform="translate(15, 15)">
+    <!-- i point -->
+    <circle cx="7" cy="7" r="3" fill="#057578"/>
+    
+    <!-- Combined shape -->
+    <path d="M 7 12
+             C 7 12, 7 25, 7 25
+             C 7 25, 23 25, 23 25
+             C 26 25, 28 23, 28 20
+             L 28 12
+             C 28 9, 26 7, 23 7
+             L 7 7
+             L 7 12"
+         fill="#057578"/>
+    
+    <!-- Inner A cutout -->
+    <path d="M 16 12
+             L 16 20
+             M 12 16
+             L 20 16"
+         stroke="#FDF5EE" 
+         stroke-width="2" 
+         stroke-linecap="round"/>
+  </g>
+</svg>

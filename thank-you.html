@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message envoyé - ARiOS Studio</title>
+    <meta name="description" content="Merci pour votre message. Nous vous répondrons rapidement.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon-officiel.svg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, var(--color-seashell) 0%, rgba(5, 117, 120, 0.05) 100%);
+        }
+        
+        .thank-you-card {
+            background: white;
+            padding: var(--spacing-3xl);
+            border-radius: 30px;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .thank-you-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-xl);
+            background: rgba(5, 117, 120, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .thank-you-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--color-skobeloff);
+        }
+        
+        .thank-you-title {
+            color: var(--color-eerie-black);
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+        }
+        
+        .thank-you-message {
+            color: var(--color-rich-black);
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.8;
+        }
+        
+        .thank-you-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: var(--spacing-xl);
+            }
+            
+            .thank-you-title {
+                font-size: 2rem;
+            }
+            
+            .thank-you-actions {
+                flex-direction: column;
+            }
+            
+            .thank-you-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <span class="lang-link active">FR</span>
+        <span class="lang-separator">|</span>
+        <a href="en/thank-you.html" class="lang-link">EN</a>
+    </div>
+    
+    <div class="thank-you-container">
+        <div class="thank-you-card">
+            <div class="thank-you-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 11L12 14L22 4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 12V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H16" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <h1 class="thank-you-title">Message envoyé !</h1>
+            
+            <p class="thank-you-message">
+                Merci pour votre message. Nous l'avons bien reçu et nous vous répondrons 
+                dans les plus brefs délais. En attendant, n'hésitez pas à explorer notre site 
+                pour en savoir plus sur nos services.
+            </p>
+            
+            <div class="thank-you-actions">
+                <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+                <a href="index.html#services" class="btn btn-secondary">Découvrir nos services</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-redirect after 10 seconds
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 10000);
+    </script>
+</body>
+</html>

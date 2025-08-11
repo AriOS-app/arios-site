@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #023739;
+      }
+
+      .cls-2 {
+        fill: #067578;
+      }
+
+      .cls-3 {
+        fill: #191b21;
+      }
+
+      .cls-4 {
+        fill: #945716;
+      }
+
+      .cls-5 {
+        fill: #fdf5ee;
+      }
+    </style>
+  </defs>
+  <rect class="cls-4" x="216" width="216" height="216"/>
+  <rect class="cls-1" x="216" y="216" width="216" height="216"/>
+  <rect class="cls-5" x="215.5" y="432" width="216" height="216"/>
+  <rect class="cls-2" x="216" y="648" width="216" height="216"/>
+  <rect class="cls-3" x="216" y="864" width="216" height="216"/>
+  <rect class="cls-3" width="216" height="216"/>
+  <rect class="cls-2" y="216" width="216" height="216"/>
+  <rect class="cls-4" y="432" width="216" height="216"/>
+  <rect class="cls-1" y="648" width="216" height="216"/>
+  <rect class="cls-5" y="864" width="216" height="216"/>
+  <circle class="cls-4" cx="324" cy="971.75" r="54.65"/>
+  <path class="cls-1" d="M432,216h-216c0-59.65,48.35-108,108-108s108,48.35,108,108Z"/>
+  <path class="cls-4" d="M216,216h216c0,59.65-48.35,108-108,108s-108-48.35-108-108Z"/>
+  <path class="cls-5" d="M108,324v216c-59.65,0-108-48.35-108-108s48.35-108,108-108Z"/>
+  <path class="cls-3" d="M108,540v-216c59.65,0,108,48.35,108,108s-48.35,108-108,108Z"/>
+  <path class="cls-2" d="M216,648v216c-59.65,0-108-48.35-108-108s48.35-108,108-108Z"/>
+  <path class="cls-2" d="M216,216.75h-17.61c0-49.84-40.55-90.39-90.39-90.39S17.61,166.91,17.61,216.75H0c0-59.55,48.45-108,108-108s108,48.45,108,108Z"/>
+  <path class="cls-1" d="M0,863.81h17.61c0,49.84,40.55,90.39,90.39,90.39s90.39-40.55,90.39-90.39h17.61c0,59.55-48.45,108-108,108S0,923.36,0,863.81Z"/>
+  <circle class="cls-1" cx="323.85" cy="648.5" r="54.65"/>
+  <path class="cls-3" d="M323.5,755.5c-59.55,0-108-48.45-108-108s48.45-108,108-108,108,48.45,108,108-48.45,108-108,108ZM323.5,557.11c-49.84,0-90.39,40.55-90.39,90.39s40.55,90.39,90.39,90.39,90.39-40.55,90.39-90.39-40.55-90.39-90.39-90.39Z"/>
+</svg>
