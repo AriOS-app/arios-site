@@ -1,3 +1,92 @@
+// Language management system
+let currentLanguage = localStorage.getItem('language') || 'fr';
+
+// Detect browser language
+function detectBrowserLanguage() {
+    const browserLang = navigator.language || navigator.userLanguage;
+    if (browserLang.startsWith('en')) {
+        return 'en';
+    }
+    return 'fr';
+}
+
+// Initialize language on first visit
+if (!localStorage.getItem('language')) {
+    currentLanguage = detectBrowserLanguage();
+    localStorage.setItem('language', currentLanguage);
+}
+
+// Apply translations
+function applyTranslations(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('language', lang);
+    
+    // Update page title
+    const titleElement = document.querySelector('title[data-i18n]');
+    if (titleElement) {
+        const key = titleElement.getAttribute('data-i18n');
+        titleElement.textContent = getNestedProperty(translations[lang], key);
+    }
+    
+    // Update meta description
+    const metaDesc = document.querySelector('meta[data-i18n-content]');
+    if (metaDesc) {
+        const key = metaDesc.getAttribute('data-i18n-content');
+        metaDesc.setAttribute('content', getNestedProperty(translations[lang], key));
+    }
+    
+    // Update all elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getNestedProperty(translations[lang], key);
+        if (translation) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translation;
+            } else {
+                element.textContent = translation;
+            }
+        }
+    });
+    
+    // Update language selector
+    document.querySelectorAll('.lang-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-lang') === lang) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Update form subject if present
+    const subjectInput = document.querySelector('input[name="_subject"]');
+    if (subjectInput && translations[lang].contact?.form?.subject) {
+        subjectInput.value = translations[lang].contact.form.subject;
+    }
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+}
+
+// Helper function to get nested property
+function getNestedProperty(obj, key) {
+    return key.split('.').reduce((o, k) => o?.[k], obj);
+}
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', () => {
+    applyTranslations(currentLanguage);
+    
+    // Add language switch event listeners
+    document.querySelectorAll('.lang-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = link.getAttribute('data-lang');
+            if (lang && lang !== currentLanguage) {
+                applyTranslations(lang);
+            }
+        });
+    });
+});
+
 // Navigation mobile toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -112,9 +201,8 @@ contactForm?.addEventListener('submit', async (e) => {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         
-        // Update button text based on language
-        const isEnglish = window.location.pathname.includes('/en/');
-        submitBtn.textContent = isEnglish ? 'Sending...' : 'Envoi en cours...';
+        // Update button text based on current language
+        submitBtn.textContent = currentLanguage === 'en' ? 'Sending...' : 'Envoi en cours...';
         submitBtn.disabled = true;
         
         // Formspree will handle the submission and redirect
